@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Sky Roller 3D</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "cannon-es": "https://unpkg.com/cannon-es@0.20.0/dist/cannon-es.js"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="hud" class="hidden">
+        <div class="hud-item">Score: <span id="score">0</span></div>
+        <div class="hud-item">Distance: <span id="distance">0</span>m</div>
+        <button id="pause-btn">Pause</button>
+    </div>
+
+    <div id="ui-layer">
+        <div id="start-menu" class="menu panel">
+            <h1>Sky Roller 3D</h1>
+            <p>Roll through the sky, dodge obstacles, and collect coins!</p>
+            <p class="controls-info"><b>Desktop:</b> WASD or Arrows to move.<br><b>Mobile:</b> Touch and drag to steer/accelerate.</p>
+            <button id="start-btn" class="action-btn">Play Now</button>
+        </div>
+
+        <div id="pause-menu" class="menu panel hidden">
+            <h1>Paused</h1>
+            <button id="resume-btn" class="action-btn">Resume</button>
+            <button id="restart-btn" class="action-btn">Restart Level</button>
+        </div>
+
+        <div id="game-over-menu" class="menu panel hidden">
+            <h1>Game Over!</h1>
+            <p>You fell off the track.</p>
+            <button id="respawn-btn" class="action-btn">Respawn at Checkpoint</button>
+        </div>
+
+        <div id="win-menu" class="menu panel hidden">
+            <h1>Level Complete!</h1>
+            <p>Final Score: <span id="final-score">0</span></p>
+            <button id="play-again-btn" class="action-btn">Play Again</button>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
